@@ -1,0 +1,12 @@
+# WorkBuddy 本地工作区数据（含私人工作日志，不进版本库）
+.workbuddy/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 系统
+.DS_Store
+Thumbs.db
+*.tmp
