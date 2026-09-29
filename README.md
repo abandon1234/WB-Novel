@@ -59,6 +59,39 @@ PY="C:/Users/35310/.workbuddy/binaries/python/versions/3.13.12/python.exe"
 
 ---
 
+## Git 同步约定（每次修改必做）
+
+仓库：`git@github.com:abandon1234/WB-Novel.git`（分支 `main`）
+
+> **铁律：改完任何文件，立刻 commit + push。**
+> 本地文件不算数，推上去才算存档。断网/忘推导致的丢稿不接受。
+
+```bash
+cd /d/MyCode/WB-Novel
+git add -A
+git commit -m "ch0012: 一句话说明这次改了什么"
+git push
+```
+
+提交信息格式：`<范围>: <动词短语>`
+
+| 场景 | 示例 |
+|---|---|
+| 写完一章 | `ch0012: 完成第12章正文+摘要` |
+| 改设定 | `bible: 沈砚能力边界上调到三阶` |
+| 改台账 | `plot: 回收伏笔F003，新增F012` |
+| 改借鉴库 | `ref: R02 结构节拍表拆完` |
+| 改系统本身 | `system: 自检清单C增加两项` |
+
+规则补充：
+
+- 一章一提交，不要把十章攒成一次「大更新」。
+- 提交前若跑过 `ctx.py check` / `ref.py scan`，把报错一并修掉再提交。
+- `.workbuddy/`（本机工作日志，含私人内容）已在 `.gitignore` 中排除，不进仓库。
+- 换机器继续写：`git clone git@github.com:abandon1234/WB-Novel.git`，写完照推。
+
+---
+
 ## 五条铁律
 
 1. **写在文件里，不写在心里** —— 记忆不可靠。
@@ -73,7 +106,8 @@ PY="C:/Users/35310/.workbuddy/binaries/python/versions/3.13.12/python.exe"
 
 | 频率 | 动作 |
 |---|---|
-| 每章 | 七步流程（定目标 → 装配 → 写作 → 自检 → 摘要 → 同步 → 滚动） |
+| 每章 | 七步流程（定目标 → 装配 → 写作 → 自检 → 摘要 → 同步 → 滚动）+ **commit & push** |
+| 每次改任何文件 | `git add -A && git commit -m "..." && git push`（见下方 Git 同步约定） |
 | 每 20 章 | 清单 C 体检 + `ctx.py check` + `ref.py report`（借鉴度） |
 | 每卷末 | 卷摘要压缩 → `04-context/archive/`；重写 CURRENT 的 D 区 |
 | 每季度 | 力量体系自洽五问 + 关系矩阵更新 |
